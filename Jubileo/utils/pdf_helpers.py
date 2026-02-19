@@ -17,6 +17,8 @@ def _agregar_articulos_comodato(items):
         'cantidad': 0,
         'UM': '',
         'concepto': '',
+        'Inventario':'',
+        'Caracteristicas':'',
         'costo': 0.0, # Costo unitario, se toma del primer item válido
         'importe': 0.0, # Suma de los importes de los items individuales agrupados
     })
@@ -55,6 +57,8 @@ def _agregar_articulos_comodato(items):
         agregados[key]['cantidad'] += cantidad_val
         agregados[key]['UM'] = item.UM if item.UM else 'N/A'
         agregados[key]['concepto'] = item.concepto if item.concepto else 'N/A'
+        agregados[key]['Inventario'] =item.Inventario if item.Inventario else 'N/A'
+        agregados[key]['Caracteristicas'] = item.Caracteristicas if item.Caracteristicas else 'N/A'
 
         # Asignar el costo unitario del primer artículo encontrado para este grupo que tenga un costo válido
         # Esto evita sobrescribir un costo válido con 0.0 si un item posterior tiene costo nulo/inválido.
