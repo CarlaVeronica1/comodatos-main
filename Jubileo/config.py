@@ -3,7 +3,7 @@
 import os
 
 #load_dotenv()  # Esto carga las variables del .env a os.environ
-print(os.environ.get('DB_USER'))  # Solo para probar que se cargó
+#print(os.environ.get('DB_USER'))  # Solo para probar que se cargó
 
 
 class Config:
