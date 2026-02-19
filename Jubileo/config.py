@@ -1,5 +1,5 @@
 # C:\Jubileo\config.py
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import os
 
 load_dotenv()  # Esto carga las variables del .env a os.environ
