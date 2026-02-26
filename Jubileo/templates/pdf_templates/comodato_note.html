@@ -166,7 +166,7 @@
         .clauses {
             margin-top: 8pt; /* Más compacto */
             margin-bottom: 8pt; 
-            font-size: 7.5pt; /* Texto más pequeño para las cláusulas */
+            font-size: 8.5pt; /* Texto más pequeño para las cláusulas */
             line-height: 1.15; /* Más compacto */
             text-align: justify;
             border: 1px solid #888; 
@@ -287,8 +287,8 @@
                     <td>{{ item.concepto | default('N/A') }}</td>
                     <td>{{ item.Inventario | default('N/A') }}</td>
                     <td>{{ item.Caracteristicas | default('N/A') }}</td>
-                    <td class="text-right">${{ "%.2f"|format(item.costo | float | default(0.0)) }}</td>
-                    <td class="text-right">${{ "%.2f"|format(item.importe | float | default(0.0)) }}</td>
+                    <td class="text-right">${{ "{:,.2f}".format(item.costo | float | default(0)) }}</td>
+                    <td class="text-right">${{ "{:,.2f}".format(item.importe | float | default(0)) }}</td>
                 </tr>
                 {% endfor %}
                 
@@ -315,14 +315,14 @@
                     <td class="text-right" style="border: none;"></td>
                     <td class="text-right" style="border: none; font-weight: bold;">IMPORTE TOTAL</td>
                     <td class="text-right" style="border: none;"></td>
-                    <td class="text-right" style="background-color: #f2f2f2; font-weight: bold;">${{ "%.2f"|format(grand_total_importe) }}</td>
+                    <td class="text-right" style="background-color: #f2f2f2; font-weight: bold;">${{ "{:,.2f}".format(grand_total_importe | default(0) | float) }}</td>
                 </tr>
             </tfoot>
         </table>
 
         <div class="clauses">
             <p>
-                Recibí en calidad de préstamo o de los artículos propiedad de la planta Purificadora Jubileo Azul, S.A. de C.V. por la venta exclusiva de agua purificada Marca Registrada Jubileo Azul; me comprometo a devolver el material antes descrito en el término de préstamo o lo devolveré en el caso que la empresa Jubileo Azul así lo requiera. Asumo la responsabilidad por pérdidas de lo anteriormente descrito, de lo contrario pagaré en una sola exhibición el importe del presente documento.
+                Recibí en calidad de préstamo los artículos propiedad de la Planta Purificadora Jubileo Azul, S.A. de C.V. para la venta exclusiva de agua purificada Marca Registrada Jubileo Azul; me comprometo a devolver el material antes descrito en el término de préstamo o lo devolveré en el caso que la empresa Jubileo Azul así lo requiera. Asumo la responsabilidad por pérdidas de lo anteriormente descrito, de lo contrario pagaré en una sola exhibición el importe del presente documento.
             </p>
         </div>
       

@@ -677,7 +677,7 @@ def generar_nota_comodato(idComodato):
 
     except Exception as e:
         error_msg = f'Ocurrió un error al generar la nota de comodato para el ID {idComodato}: {e}'
-        logger.error(error_msg, exc_info=True) 
+        logger.error(error_msg)#, exc_info=True) 
         enviar_correo_error(
             asunto="Error en Sistema de Comodatos: Generación de PDF Agrupado",
             cuerpo=f"Ha ocurrido un error inesperado al intentar generar la nota de comodato en PDF para el ID: {idComodato}.\n\nDetalles del error: {error_msg}\n\nPor favor, revise los logs del servidor para más información."
