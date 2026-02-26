@@ -12,7 +12,6 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
        f"mysql+pymysql://{os.environ.get('DB_USER', 'root')}:{os.environ.get('DB_PASSWORD', '')}@" \
         f"{os.environ.get('DB_HOST', 'localhost')}:{os.environ.get('DB_PORT', '3306')}/{os.environ.get('DB_NAME', 'jubileo')}"
-    #SQLALCHEMY_DATABASE_URI ="mysql+pymysql://db23620:C7x3c7uZ8Gj4JfhE6@db23620.public.databaseasp.net:3306/db23620"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Configuración de Flask-Mail para envío de correos
